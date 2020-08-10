@@ -31,3 +31,7 @@ build
 # Ignore InteliJ Idea project infor directory and settings
 /.idea/
 *.iml
+
+
+# Exclude these files from gitignore
+gradle/wrapper/gradle-wrapper.jar
