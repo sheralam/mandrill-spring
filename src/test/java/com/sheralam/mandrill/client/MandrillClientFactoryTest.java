@@ -1,5 +1,6 @@
 package com.sheralam.mandrill.client;
 
+import com.sheralam.mandrill.api.messages.model.request.Message;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -31,6 +32,6 @@ class MandrillClientFactoryTest {
 
     @Test
     void testGetClientForApiKeyTemplateSupplierProvidesNull() {
-        assertThrows(NullPointerException.class, () -> MandrillClientFactory.getClientForApiKey(testApiKey, () -> null));
+        assertFalse(MandrillClientFactory.getClientForApiKey(testApiKey, () -> null).getMessages().send(new Message()).isPresent());
     }
 }

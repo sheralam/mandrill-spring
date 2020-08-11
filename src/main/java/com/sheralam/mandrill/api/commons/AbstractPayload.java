@@ -2,6 +2,7 @@ package com.sheralam.mandrill.api.commons;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.SneakyThrows;
 
 import java.io.Serializable;
 
@@ -13,7 +14,11 @@ public abstract class AbstractPayload implements Serializable {
     protected AbstractPayload(String key) {
         this.key = key;
     }
+
+    @SneakyThrows
     protected AbstractPayload() {
         this("");
+        throw new Exception("Key must be provided.");
+
     }
 }
