@@ -4,6 +4,8 @@ import com.sheralam.mandrill.api.commons.AbstractService;
 import com.sheralam.mandrill.api.messages.handlers.*;
 import com.sheralam.mandrill.api.messages.model.request.Message;
 import com.sheralam.mandrill.api.messages.model.request.MessagePayload;
+import com.sheralam.mandrill.api.messages.model.request.TemplateContent;
+import com.sheralam.mandrill.api.messages.model.request.TemplatePayload;
 import com.sheralam.mandrill.api.messages.model.response.IndividualSuccessResponse;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +27,7 @@ public class MessagesCallsService extends AbstractService {
     private SearchTimeSeriesHandler searchTimeSeriesHandler;
     private SendRawHandler sendRawHandler;
     private SendTemplateHandler sendTemplateHandler;
-    
+
 
     public MessagesCallsService(String apiKey, @NonNull Supplier<RestTemplate> restTemplateSupplier) {
         super(apiKey);
@@ -37,8 +39,8 @@ public class MessagesCallsService extends AbstractService {
         return sendMessageHandler.apply(new MessagePayload(getApiKey(), message));
     }
 
-    final public Optional<String> sendTemplate(Message message) {
-        return sendTemplateHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<IndividualSuccessResponse[]> sendTemplate(String templateName, TemplateContent templateContent, Message message) {
+        return sendTemplateHandler.apply(new TemplatePayload(getApiKey(), templateName, templateContent, message));
     }
 
     final public Optional<String> content(Message message) {
