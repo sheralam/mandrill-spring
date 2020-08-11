@@ -32,6 +32,6 @@ class MandrillClientFactoryTest {
 
     @Test
     void testGetClientForApiKeyTemplateSupplierProvidesNull() {
-        assertFalse(MandrillClientFactory.getClientForApiKey(testApiKey, () -> null).getMessages().send(new Message()).isPresent());
+        assertThrows(NullPointerException.class, () -> MandrillClientFactory.getClientForApiKey(testApiKey, () -> null).getMessages().send(new Message()));
     }
 }
