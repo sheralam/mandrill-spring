@@ -13,7 +13,7 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @Slf4j
-public class MessagePayload extends Payload implements Serializable {
+public class MessagePayload extends AbstractMessageAndTemplatePayload implements Serializable {
 
     private final static long serialVersionUID = -548626036118002490L;
     Message message;

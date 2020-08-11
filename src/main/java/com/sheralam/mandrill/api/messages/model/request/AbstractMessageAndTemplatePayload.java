@@ -13,18 +13,16 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @EqualsAndHashCode(callSuper = true)
-public abstract class Payload extends AbstractPayload implements Serializable {
+public abstract class AbstractMessageAndTemplatePayload extends AbstractPayload implements Serializable {
     protected final String sendAt = "2000-10-01 01:01:01"; // set previous date to send immediately. otherwise additional cost will be charged
     protected final boolean async = true;
     protected String ipPool = "";
 
-    protected Payload(String key) {
+    protected AbstractMessageAndTemplatePayload(String key) {
         super(key);
     }
 
-    @SneakyThrows
-    protected Payload() {
+    protected AbstractMessageAndTemplatePayload() {
         super();
-        throw new Exception("Key must be provided.");
     }
 }
