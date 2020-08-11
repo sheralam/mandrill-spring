@@ -13,7 +13,7 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @NoArgsConstructor
-public class TemplatePayload extends Payload implements Serializable {
+public class TemplatePayload extends AbstractMessageAndTemplatePayload implements Serializable {
 
     private final static long serialVersionUID = 629126036398002490L;
     private String templateName;
