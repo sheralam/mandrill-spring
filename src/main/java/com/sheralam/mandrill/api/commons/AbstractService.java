@@ -14,6 +14,7 @@ import java.util.function.Supplier;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @RequiredArgsConstructor
 public abstract class AbstractService implements Serializable {
+    private static final long serialVersionUID = 6288607929592787988L;
     @Getter(AccessLevel.PROTECTED)
     private final String apiKey;
 

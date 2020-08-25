@@ -21,4 +21,10 @@ public class ReScheduledPayload extends AbstractPayload {
     public ReScheduledPayload(String key){
         super(key);
     }
+
+    public ReScheduledPayload(String key, String id, String sendAt) {
+        super(key);
+        this.id = id;
+        this.sendAt = sendAt;
+    }
 }

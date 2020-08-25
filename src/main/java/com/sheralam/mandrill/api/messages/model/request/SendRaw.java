@@ -7,17 +7,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @Slf4j
-public class SendRawPayload extends AbstractPayload {
-    private static final long serialVersionUID = -3852172064563582399L;
+public class SendRaw implements Serializable {
+    private static final long serialVersionUID = 182121211802917378L;
     public String rawMessage;
     public String fromEmail;
     public String fromName;
@@ -26,20 +26,4 @@ public class SendRawPayload extends AbstractPayload {
     public String ipPool;
     public String sendAt;
     public String returnPathDomain;
-
-    public SendRawPayload(String key) {
-        super(key);
-    }
-
-    public SendRawPayload(String key, SendRaw sendRaw) {
-        super(key);
-        rawMessage = sendRaw.getRawMessage();
-        fromEmail = sendRaw.getFromEmail();
-        fromName = sendRaw.getFromName();
-        to = sendRaw.getTo();
-        async = sendRaw.isAsync();
-        ipPool = sendRaw.getIpPool();
-        sendAt = sendRaw.getSendAt();
-        returnPathDomain = sendRaw.getReturnPathDomain();
-    }
 }

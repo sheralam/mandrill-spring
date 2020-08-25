@@ -26,7 +26,19 @@ public class SearchPayload extends AbstractPayload implements Serializable {
     public List<String> senders = new ArrayList<>();
     public List<String> apiKeys = new ArrayList<>();
     public long limit;
+
     public SearchPayload(String key) {
         super(key);
+    }
+
+    public SearchPayload(String key, Search search) {
+        super(key);
+        query = search.getQuery();
+        dateFrom = search.getDateFrom();
+        dateTo = search.getDateTo();
+        tags = search.getTags();
+        senders = search.getSenders();
+        apiKeys = search.getApiKeys();
+        limit = search.getLimit();
     }
 }

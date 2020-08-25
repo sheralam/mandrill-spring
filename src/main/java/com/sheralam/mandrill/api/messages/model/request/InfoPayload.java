@@ -20,4 +20,9 @@ public class InfoPayload extends AbstractPayload {
     public InfoPayload(String key) {
         super(key);
     }
+
+    public InfoPayload(String key, String id) {
+        super(key);
+        this.id = id;
+    }
 }

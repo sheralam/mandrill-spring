@@ -7,22 +7,21 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-@EqualsAndHashCode(callSuper = true)
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 @Slf4j
-public class ListScheduledPayload extends AbstractPayload {
-    private static final long serialVersionUID = -7658124329185027241L;
-    private String to;
+public class SearchTimeSeries implements Serializable {
 
-    public ListScheduledPayload(String key) {
-        super(key);
-    }
-
-    public ListScheduledPayload(String key, String to) {
-        super(key);
-        this.to = to;
-    }
+    private static final long serialVersionUID = 2059140958077226804L;
+    public String query;
+    public String dateFrom;
+    public String dateTo;
+    public List<String> tags = new ArrayList<>();
+    public List<String> senders = new ArrayList<>();
 }

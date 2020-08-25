@@ -20,4 +20,9 @@ public class CancelScheduledPayload extends AbstractPayload {
     public CancelScheduledPayload(String key) {
         super(key);
     }
+
+    public CancelScheduledPayload(String key, String id) {
+        super(key);
+        this.id = id;
+    }
 }
