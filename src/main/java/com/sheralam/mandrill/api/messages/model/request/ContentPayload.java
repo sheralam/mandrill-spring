@@ -20,4 +20,9 @@ public class ContentPayload extends AbstractPayload {
     public ContentPayload(String key){
         super(key);
     }
+
+    public ContentPayload(String key, String id) {
+        super(key);
+        this.id = id;
+    }
 }

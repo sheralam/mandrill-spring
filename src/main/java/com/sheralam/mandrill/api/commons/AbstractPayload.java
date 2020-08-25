@@ -17,7 +17,7 @@ public abstract class AbstractPayload implements Serializable {
     }
 
     @SneakyThrows
-    private AbstractPayload() {
+    protected AbstractPayload() {
         this("");
         throw new Exception("Key must be provided.");
 

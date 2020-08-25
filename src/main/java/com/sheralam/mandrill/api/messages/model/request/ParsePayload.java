@@ -21,4 +21,9 @@ public class ParsePayload extends AbstractPayload {
     public ParsePayload(String key) {
         super(key);
     }
+
+    public ParsePayload(String key, String rawMessage) {
+        super(key);
+        this.rawMessage = rawMessage;
+    }
 }

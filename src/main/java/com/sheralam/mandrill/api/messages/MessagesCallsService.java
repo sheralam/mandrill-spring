@@ -2,11 +2,8 @@ package com.sheralam.mandrill.api.messages;
 
 import com.sheralam.mandrill.api.commons.AbstractService;
 import com.sheralam.mandrill.api.messages.handlers.*;
-import com.sheralam.mandrill.api.messages.model.request.Message;
-import com.sheralam.mandrill.api.messages.model.request.MessagePayload;
-import com.sheralam.mandrill.api.messages.model.request.TemplateContent;
-import com.sheralam.mandrill.api.messages.model.request.TemplatePayload;
-import com.sheralam.mandrill.api.messages.model.response.IndividualSuccessResponse;
+import com.sheralam.mandrill.api.messages.model.request.*;
+import com.sheralam.mandrill.api.messages.model.response.*;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.client.RestTemplate;
@@ -16,6 +13,7 @@ import java.util.function.Supplier;
 
 @Slf4j
 public class MessagesCallsService extends AbstractService {
+    private static final long serialVersionUID = -8517582022877271344L;
     private SendMessageHandler sendMessageHandler;
     private CancelScheduledHandler cancelScheduledHandler;
     private ContentHandler contentHandler;
@@ -43,40 +41,40 @@ public class MessagesCallsService extends AbstractService {
         return sendTemplateHandler.apply(new TemplatePayload(getApiKey(), templateName, templateContent, message));
     }
 
-    final public Optional<String> content(Message message) {
-        return contentHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<ContentResponse> content(String id) {
+        return contentHandler.apply(new ContentPayload(getApiKey(),id));
     }
 
-    final public Optional<String> cancelScheduled(Message message) {
-        return cancelScheduledHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<CancelScheduledResponse> cancelScheduled(String id) {
+        return cancelScheduledHandler.apply(new CancelScheduledPayload(getApiKey(), id));
     }
 
-    final public Optional<String> info(Message message) {
-        return infoHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<InfoResponse> info(String id) {
+        return infoHandler.apply(new InfoPayload(getApiKey(), id));
     }
 
-    final public Optional<String> listScheduled(Message message) {
-        return listScheduledHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<ListScheduledResponse[]> listScheduled(String to) {
+        return listScheduledHandler.apply(new ListScheduledPayload(getApiKey(), to));
     }
 
-    final public Optional<String> parse(Message message) {
-        return parseHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<ParseResponse> parse(String rawMessage) {
+        return parseHandler.apply(new ParsePayload(getApiKey(), rawMessage));
     }
 
-    final public Optional<String> reschedule(Message message) {
-        return rescheduleHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<ReScheduledResponse> reschedule(String id, String sendAt) {
+        return rescheduleHandler.apply(new ReScheduledPayload(getApiKey(), id, sendAt));
     }
 
-    final public Optional<String> search(Message message) {
-        return searchHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<SearchResponse[]> search(Search searchQuery) {
+        return searchHandler.apply(new SearchPayload(getApiKey(), searchQuery));
     }
 
-    final public Optional<String> searchTimeSeries(Message message) {
-        return searchTimeSeriesHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<SearchTimeSeriesResponse[]> searchTimeSeries(SearchTimeSeries searchTimeSeries) {
+        return searchTimeSeriesHandler.apply(new SearchTimeSeriesPayload(getApiKey(), searchTimeSeries));
     }
 
-    final public Optional<String> sendRaw(Message message) {
-        return sendRawHandler.apply(new MessagePayload(getApiKey(), message));
+    final public Optional<SendRawResponse[]> sendRaw(SendRaw sendRaw) {
+        return sendRawHandler.apply(new SendRawPayload(getApiKey(), sendRaw));
     }
 
 

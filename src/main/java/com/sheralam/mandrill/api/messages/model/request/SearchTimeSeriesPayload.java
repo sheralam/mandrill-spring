@@ -29,4 +29,12 @@ public class SearchTimeSeriesPayload extends AbstractPayload {
         super(key);
     }
 
+    public SearchTimeSeriesPayload(String key, SearchTimeSeries searchTimeSeries) {
+        super(key);
+        query = searchTimeSeries.getQuery();
+        dateFrom = searchTimeSeries.getDateFrom();
+        dateTo = searchTimeSeries.getDateTo();
+        tags = searchTimeSeries.getTags();
+        senders = searchTimeSeries.getSenders();
+    }
 }

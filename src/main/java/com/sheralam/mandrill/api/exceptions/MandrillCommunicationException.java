@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.springframework.web.client.RestClientException;
 
 public class MandrillCommunicationException extends RestClientException {
+    private static final long serialVersionUID = 212391650842257159L;
     @Getter
     MandrillCommunicationErrorResponse errorResponse = new MandrillCommunicationErrorResponse();
 
