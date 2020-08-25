@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class IndividualSuccessResponse extends AbstractResponse {
+    private static final long serialVersionUID = -4360813971391980885L;
     private String email;
     private String status;
     @JsonProperty("reject_reason")
