@@ -9,6 +9,7 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class AbstractPayload implements Serializable {
+    private static final long serialVersionUID = -1329073643934511423L;
     protected final String key;
 
     protected AbstractPayload(String key) {
