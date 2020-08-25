@@ -10,4 +10,5 @@ import java.io.Serializable;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 public abstract class AbstractResponse implements Serializable {
+    private static final long serialVersionUID = -923382378305648567L;
 }
