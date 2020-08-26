@@ -11,9 +11,16 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Default {@link RestTemplate} supplier class
+ */
 @Slf4j
 @Value
 public class RestTemplateSupplier implements Supplier<RestTemplate> {
+    /**
+     *
+     * @return {@link RestTemplate}
+     */
     @Override
     public RestTemplate get() {
         log.debug("Creating  mandrill RestTemplate");
