@@ -12,8 +12,6 @@ import java.util.function.Supplier;
 public class CancelScheduledHandler extends RequestHandler<CancelScheduledPayload, CancelScheduledResponse> {
     private static final String endpointSuffix = "/messages/cancel-scheduled.json";
 
-
-
     public CancelScheduledHandler(@NonNull Supplier<RestTemplate> restTemplateSupplier) {
         super(endpointSuffix, restTemplateSupplier);
     }
