@@ -11,8 +11,12 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Optional;
 import java.util.function.Supplier;
 
+/**
+ * MessagesCallsService handles all api call related to mandrill-messages-api<br/>
+ * @see <a href="https://mandrillapp.com/api/docs/messages.JSON.html">mandrill-messages-api</a>
+ */
 @Slf4j
-public class MessagesCallsService extends AbstractService {
+public final class MessagesCallsService extends AbstractService {
     private static final long serialVersionUID = -8517582022877271344L;
     private SendMessageHandler sendMessageHandler;
     private CancelScheduledHandler cancelScheduledHandler;
@@ -27,6 +31,11 @@ public class MessagesCallsService extends AbstractService {
     private SendTemplateHandler sendTemplateHandler;
 
 
+    /**
+     * @param apiKey Mandrill Api Key
+     * @param restTemplateSupplier Supplier of spring boot {@link RestTemplate}
+     * Creates {@link MessagesCallsService}
+     */
     public MessagesCallsService(String apiKey, @NonNull Supplier<RestTemplate> restTemplateSupplier) {
         super(apiKey);
         init(restTemplateSupplier);

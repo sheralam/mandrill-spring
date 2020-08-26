@@ -18,8 +18,8 @@ public class MandrillClientFactory {
 
     /**
      *
-     * @param apiKey - mandrill api key
-     * @return MandrillClient with default setup
+     * @param apiKey mandrill api key
+     * @return {@link MandrillClient} with default setup
      */
     public static synchronized MandrillClient getClientForApiKey(@NonNull String apiKey) {
         return clientsMap.computeIfAbsent(apiKey, MandrillClient::new);
@@ -27,9 +27,9 @@ public class MandrillClientFactory {
 
     /**
      *
-     * @param apiKey - mandrill api key
+     * @param apiKey mandrill api key
      * @param restTemplateSupplier supplies RestTemplate that overrides default
-     * @return MandrillClient with provided RestTemplate
+     * @return {@link MandrillClient} with provided RestTemplate
      */
     public static synchronized MandrillClient getClientForApiKey(@NonNull String apiKey, @NonNull Supplier<RestTemplate> restTemplateSupplier) {
         return clientsMap.computeIfAbsent(apiKey, key -> new MandrillClient(key, restTemplateSupplier));
@@ -38,9 +38,9 @@ public class MandrillClientFactory {
 
     /**
      *
-     * @param apiKey - mandrill api key
+     * @param apiKey mandrill api key
      * @param restTemplate  that overrides default
-     * @return MandrillClient with provided RestTemplate
+     * @return {@link MandrillClient} with provided RestTemplate
      */
     public static synchronized MandrillClient getClientForApiKey(@NonNull String apiKey, @NonNull RestTemplate restTemplate) {
         return clientsMap.computeIfAbsent(apiKey, key -> new MandrillClient(key, restTemplate));
