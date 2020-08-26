@@ -11,7 +11,6 @@ import java.util.function.Supplier;
 public class SearchHandler extends RequestHandler<SearchPayload, SearchResponse[]> {
     private static final String endpointSuffix = "/messages/search.json";
 
-
     public SearchHandler(@NonNull Supplier<RestTemplate> restTemplateSupplier) {
         super(endpointSuffix, restTemplateSupplier);
     }
