@@ -3,10 +3,10 @@
 
 ### Integration with your Project
 
-Current Version __0.0.1__ . You are wellcome for beta testing this verion. 
+Current Version __0.0.1__ . You are welcome for beta testing this version. 
 
 Version __1.x.x__ will be released __within October'2020__. 
-There will be __no__ changes on public interfaces between v1.x.x and v0.x.x. Upgrade from any 0.x.x to 1.x.x would require __Only__ change in dependancy mangement settings file (e.g pom.xml)
+There will be __no__ changes on public interfaces between v1.x.x and v0.x.x. Upgrade from any 0.x.x to 1.x.x would require __Only__ change in dependency management settings file (e.g pom.xml)
 
 #### Apache Maven
 
