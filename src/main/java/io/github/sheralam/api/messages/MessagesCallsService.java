@@ -15,7 +15,7 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 /**
- * MessagesCallsService handles all api call related to mandrill-messages-api<br/>
+ * MessagesCallsService handles all api call related to mandrill-messages-api
  * @see <a href="https://mandrillapp.com/api/docs/messages.JSON.html">mandrill-messages-api</a>
  */
 @Slf4j

@@ -8,8 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Supplier;
 
 /**
- * MandrillClientFactory Provides various different ways of creating  {@link MandrillClient}.<br/>
- * ApiKey is the Must,<br/><br/> however, should we need to override default {@link RestTemplate} provided by the {@link RestTemplateSupplier},<br/>
+ * MandrillClientFactory Provides various different ways of creating  {@link MandrillClient}.
+ * ApiKey is the Must,   however, should we need to override default {@link RestTemplate} provided by the {@link RestTemplateSupplier},
  * We can provide either an Object of {@link RestTemplate} or {@link Supplier} of {@link RestTemplate}
  */
 public class MandrillClientFactory {
