@@ -52,7 +52,7 @@ public class Message implements Serializable {
 
     /**
      * @param preserveRecipients
-     * Always throws {@link NotImplementedException}<br/>
+     * Always throws {@link NotImplementedException}
      * <i>To enable this, use exposeAllRecipientsIntoToHeader() instead</i>
      */
     @Deprecated
@@ -77,7 +77,7 @@ public class Message implements Serializable {
     }
 
     /**
-     * Enable preserveRecipients. <br/><b>This will expose all recipients in to 'To' header for each email</b>
+     * Enable preserveRecipients.  <b>This will expose all recipients in to 'To' header for each email</b>
      */
     public void exposeAllRecipientsIntoToHeader(){
         log.trace("Enabling preserveRecipients. This will expose all recipients in to 'To' header for each email");

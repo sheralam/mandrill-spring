@@ -9,8 +9,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.function.Supplier;
 
 /**
- * MandrillClient for mandrill api integration.<br/>
- * It Depends on Spring Framework's {@link RestTemplate} <br/>
+ * MandrillClient for mandrill api integration.
+ * It Depends on Spring Framework's {@link RestTemplate}
  * It provides similar functional interface as other language specific official mandrill integration library
  */
 @Slf4j
@@ -34,7 +34,7 @@ public class MandrillClient {
     /**
      *
      * @param apiKey Mandrill Api Key
-     * <br/> Creates {@link MandrillClient}
+     *   Creates {@link MandrillClient}
      */
     MandrillClient(@NonNull String apiKey) {
         this.apiKey = apiKey;
@@ -47,7 +47,7 @@ public class MandrillClient {
      *
      * @param apiKey Mandrill Api Key
      * @param restTemplate spring boot {@link RestTemplate}
-     * <br/> Creates {@link MandrillClient}
+     *   Creates {@link MandrillClient}
      */
     MandrillClient(@NonNull String apiKey, @NonNull RestTemplate restTemplate) {
         this.apiKey = apiKey;
@@ -60,7 +60,7 @@ public class MandrillClient {
      *
      * @param apiKey Mandrill Api Key
      * @param restTemplateSupplier Supplier of spring boot {@link RestTemplate}
-     * <br/> Creates {@link MandrillClient}
+     *   Creates {@link MandrillClient}
      */
     MandrillClient(@NonNull String apiKey, @NonNull Supplier<RestTemplate> restTemplateSupplier) {
         this.apiKey = apiKey;
